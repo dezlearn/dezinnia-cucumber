@@ -1,9 +1,11 @@
 package steps;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 
 public class Common_Steps {
 	
@@ -17,7 +19,13 @@ public class Common_Steps {
 	}
 	
 	@After(order = 1)
-	public void tearDown() throws Exception {
+	public void tearDown(Scenario scenario) throws Exception {
+		if(scenario.isFailed()) {
+			//Take Screenshot
+			final byte[] shot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+			//Embed into Report
+			scenario.embed(shot, "image/png", scenario.getName());
+		}
 		driver.quit();
 		Thread.sleep(1000);
 		System.out.println("Global After Hook Executed");

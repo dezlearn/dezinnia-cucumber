@@ -9,11 +9,11 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = {"features"},
 		glue = {"steps"},
-		plugin = {"pretty", "html:Report1"},
+		plugin = {"pretty", "json:target/json-report/cucumber.json"},
 		dryRun = false,
 		strict = true,
 		monochrome = true,
-		tags = {"@P1 and @P2"}
+		tags = {"@P1 or @P2"}
 		//name = {"Logo"}
 		)
 public class TestRunner {
