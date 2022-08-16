@@ -11,9 +11,8 @@ import io.cucumber.junit.CucumberOptions;
 		glue = {"steps"},
 		plugin = {"pretty", "json:target/json-report/cucumber.json"},
 		dryRun = false,
-		strict = true,
 		monochrome = true,
-		tags = {"@P1 or @P2"}
+		tags = "@P1 or @P2"
 		//name = {"Logo"}
 		)
 public class TestRunner {
