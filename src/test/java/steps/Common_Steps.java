@@ -24,7 +24,7 @@ public class Common_Steps {
 			//Take Screenshot
 			final byte[] shot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
 			//Embed into Report
-			scenario.embed(shot, "image/png", scenario.getName());
+			scenario.attach(shot, "image/png", scenario.getName());
 		}
 		driver.quit();
 		Thread.sleep(1000);

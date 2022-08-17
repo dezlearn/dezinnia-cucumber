@@ -1,6 +1,6 @@
 package steps;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.fail; 
 
 import org.openqa.selenium.WebDriver;
 
@@ -10,7 +10,6 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.core.annotations.findby.By;
 
 public class EbayAdvancedSearch_Steps {
 	Common_Actions common_actions;
