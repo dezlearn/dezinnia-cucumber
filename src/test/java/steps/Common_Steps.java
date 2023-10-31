@@ -13,7 +13,11 @@ public class Common_Steps {
 	
 	@Before(order = 0)
 	public void setUp() {
-		 System.setProperty("webdriver.chrome.driver", "webdrivers/chromedriver");
+		 /***
+		  * Selenium 4 Update: Providing chromedriver path is not required anymore.
+		  * This is taken care by webdriver manager automatically.
+		 ***/
+		 //System.setProperty("webdriver.chrome.driver", "webdrivers/chromedriver");
 		 driver = new ChromeDriver();
 		 System.out.println("Global Before Hook Executed");
 	}
